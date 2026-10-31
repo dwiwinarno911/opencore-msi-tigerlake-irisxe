@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>Label</key>
+	<string>local.wex.metal-archive-workaround</string>
+	<key>LimitLoadToSessionType</key>
+	<string>Aqua</string>
+	<key>ProcessType</key>
+	<string>Background</string>
+	<key>RunAtLoad</key>
+	<true/>
+	<key>KeepAlive</key>
+	<false/>
+	<key>ProgramArguments</key>
+	<array>
+		<string>/bin/sh</string>
+		<string>-c</string>
+		<string>/bin/launchctl setenv RB_USE_BINARY_ARCHIVE 0; /bin/launchctl setenv MTL_DEBUG_IGNORE_PRECOMPILED_BINARIES 1; /bin/launchctl setenv MTL_DEBUG_IGNORE_PSO_FAIL_ON_MISS 1; sleep 2; /usr/bin/killall ControlCenter 2>/dev/null; sleep 2; /usr/bin/open -a /System/Library/CoreServices/ControlCenter.app</string>
+	</array>
+</dict>
+</plist>
