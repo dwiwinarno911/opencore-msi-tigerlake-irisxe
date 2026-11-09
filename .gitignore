@@ -1,4 +1,6 @@
 .DS_Store
 ._*
 *.bak
+*.bak-*
+Kexts-disabled/
 SysReport/
